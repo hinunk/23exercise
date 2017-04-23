@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom</title>
+    <style>
+        .h1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+
+    <script src="dom.js"></script>
+    <script>
+        let items = $('li')
+        console.assert(items instanceof Array)
+        console.log(items)
+        items.on('click', function () {
+            console.log('click')
+        })
+        console.assert(items.on !== undefined)
+        items.addClass('h1')
+        items.removeClass('h1')
+        items.text('sss')
+        let textList = items.text()
+        
+        let item = items.get(0)
+        console.assert(item.siblings === undefined)
+        
+        let $item = $(item)
+        console.assert($item[0] === item)
+        console.assert($item.siblings !== undefined)
+
+        $('li').siblings().addClass('addClass').end().removeClass('addClass')
+        console.assert($li.siblings().beforeSelection === $li)
+        console.assert($li.siblings().end() === $li.siblings().beforeSelection)
+        console.assert($('li') instanceof Array)
+        console.log($item) 
+        console.log($item.siblings())
+        console.assert(item.tagName === 'LI')
+        console.assert(item.addEventListener !== undefined)
+
+        console.log('运行完成') 
+    </script>
+</body>
+
+</html>
