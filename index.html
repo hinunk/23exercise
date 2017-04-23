@@ -43,7 +43,7 @@
         let $item = $(item)
         console.assert($item[0] === item)
         console.assert($item.siblings !== undefined)
-
+        let $li = $('li')
         $('li').siblings().addClass('addClass').end().removeClass('addClass')
         console.assert($li.siblings().beforeSelection === $li)
         console.assert($li.siblings().end() === $li.siblings().beforeSelection)
